@@ -9,7 +9,7 @@ change.
 
 ## Current Goal
 
-- Start Unit 02 (authentication and initial profile setup) after completing Unit 01 app shell.
+- Prepare Unit 05 pose practice core shell after completing Unit 04 home dashboard.
 
 ## Completed
 
@@ -23,16 +23,46 @@ change.
   - Added root and tab layouts with 5 BodPose routes.
   - Implemented dark theme token baseline and shared placeholder screen shell.
   - Added startup font loading gate via splash screen handling.
+- Created `context/specs/02-auth-profile-setup.md`.
+- Completed Unit 02 authentication and profile setup foundation:
+  - Added Firebase auth scaffold with env-based config.
+  - Added Zustand auth/profile state store.
+  - Added login/signup screens and route group.
+  - Added initial profile setup screen and route gating.
+  - Added `.env.example` for Firebase public variables.
+- Created `context/specs/03-local-data-foundation.md`.
+- Completed Unit 03 local data foundation:
+  - Added MMKV storage wrapper helpers and profile storage key strategy.
+  - Added WatermelonDB schema, model classes, and database singleton bootstrap.
+  - Enabled TypeScript decorator support for WatermelonDB models.
+  - Added app startup profile hydration and persistence through auth store integration.
+- Created `context/specs/04-home-dashboard-foundation.md`.
+- Completed Unit 04 home dashboard foundation:
+  - Replaced Home placeholder with a multi-section dashboard layout.
+  - Added Vj mini-card block, streak snapshot, quick-start actions, and account status panel.
+  - Added reusable `SectionCard` home component.
+  - Preserved logout flow and tab navigation links from dashboard actions.
+- Applied Stitch/Iron Precision palette alignment:
+  - Updated app color tokens in `src/constants/colors.ts`.
+  - Updated `ui-context.md` color system and theme notes to match referenced design language.
+- Applied UI polish and navigation constraint updates:
+  - Bottom tab navigation now enforces a maximum of 4 visible buttons (Home, Pose, Muscles, Progress).
+  - Analyze route remains accessible but is hidden from the tab bar.
+  - Updated card, form, button, and border styling for Iron Precision consistency.
+- Applied Stitch rhythm pass for screen structure:
+  - Added shared `AppTopBar` component.
+  - Updated tab screen placeholder layout to 16/24 spacing rhythm and unified section hierarchy.
+  - Updated Home screen to use the same top-bar + spacing cadence as the rest of tab UI.
 
 ## In Progress
 
-- Unit 02 planning and implementation setup (auth + profile onboarding flow).
+- Unit 05 planning and implementation setup (pose practice core shell).
 
 ## Next Up
 
-- Unit 02: Auth and profile setup flow (Firebase Auth + initial profile capture).
-- Unit 03: Local data foundation (WatermelonDB + MMKV wiring).
-- Unit 04: Home dashboard foundation (Vj mini card, streak, quick-start shell).
+- Unit 05: Offline pose practice core shell (camera + detector wrapper + score panel scaffold).
+- Unit 06: Offline alignment engine and feedback rules.
+- Unit 07: Pose library and pose detail foundation.
 
 ## Open Questions
 
@@ -54,3 +84,24 @@ change.
 - Unit 01 verification status:
   - TypeScript check passes (`npm run typecheck`).
   - No linter errors in edited `app/` and `src/` files.
+- Unit 02 verification status:
+  - TypeScript check passes (`npm run typecheck`).
+  - No linter errors in edited files.
+  - Auth flow requires Firebase env values in runtime for real sign-in/sign-up behavior.
+- Unit 03 verification status:
+  - TypeScript check passes (`npm run typecheck`).
+  - No linter errors in edited files.
+  - WatermelonDB and MMKV packages are installed and scaffolded for upcoming feature units.
+- Unit 04 verification status:
+  - TypeScript check passes (`npm run typecheck`).
+  - No linter errors in edited files.
+  - Home dashboard now includes actionable UI sections instead of placeholder-only content.
+- Palette alignment verification:
+  - TypeScript check passes (`npm run typecheck`).
+  - No linter errors in edited files.
+- Navigation/polish verification:
+  - TypeScript check passes (`npm run typecheck`).
+  - No linter errors in edited files.
+- Rhythm/topbar verification:
+  - TypeScript check passes (`npm run typecheck`).
+  - No linter errors in edited files.

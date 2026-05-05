@@ -1,9 +1,13 @@
 import { Tabs } from "expo-router";
-import { Activity, BarChart3, Dumbbell, House, ScanLine } from "lucide-react-native";
+import { Activity, BarChart3, Dumbbell, House } from "lucide-react-native";
 
 import { colors } from "@/constants/colors";
+import { useAuthStore } from "@/stores/useAuthStore";
 
 export default function TabLayout() {
+  const { isAuthReady } = useAuthStore();
+  if (!isAuthReady) return null;
+
   return (
     <Tabs
       screenOptions={{
@@ -12,14 +16,14 @@ export default function TabLayout() {
         tabBarInactiveTintColor: colors.detail,
         tabBarStyle: {
           backgroundColor: colors.surface,
-          borderTopColor: colors.surface2,
-          height: 64,
-          paddingBottom: 8,
+          borderTopColor: colors.border,
+          height: 72,
+          paddingBottom: 10,
           paddingTop: 8,
         },
         tabBarLabelStyle: {
           fontFamily: "DMSans_500Medium",
-          fontSize: 12,
+          fontSize: 11,
         },
       }}
     >
@@ -38,13 +42,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="analyze"
-        options={{
-          title: "Analyze",
-          tabBarIcon: ({ color, size }) => <ScanLine color={color} size={size} />,
-        }}
-      />
-      <Tabs.Screen
         name="muscles"
         options={{
           title: "Muscles",
@@ -56,6 +53,12 @@ export default function TabLayout() {
         options={{
           title: "Progress",
           tabBarIcon: ({ color, size }) => <BarChart3 color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="analyze"
+        options={{
+          href: null,
         }}
       />
     </Tabs>

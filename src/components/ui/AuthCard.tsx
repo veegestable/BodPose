@@ -2,36 +2,32 @@ import { PropsWithChildren } from "react";
 import { SafeAreaView, Text, View } from "react-native";
 
 import { colors } from "@/constants/colors";
-import { AppTopBar } from "@/components/ui/AppTopBar";
 
-type ScreenPlaceholderProps = PropsWithChildren<{
+type AuthCardProps = PropsWithChildren<{
   title: string;
-  description: string;
+  subtitle: string;
 }>;
 
-export function ScreenPlaceholder({
-  title,
-  description,
-  children,
-}: ScreenPlaceholderProps) {
+export function AuthCard({ title, subtitle, children }: AuthCardProps) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.bg }}>
-      <AppTopBar />
-      <View
-        style={{
-          flex: 1,
-          paddingHorizontal: 16,
-          paddingVertical: 24,
-          gap: 24,
-        }}
-      >
-        <View style={{ gap: 8 }}>
+      <View style={{ flex: 1, justifyContent: "center", padding: 16 }}>
+        <View
+          style={{
+            borderRadius: 12,
+            borderWidth: 1,
+            borderColor: colors.border,
+            backgroundColor: colors.surface,
+            padding: 16,
+            gap: 12,
+          }}
+        >
           <Text
             style={{
               color: colors.textPrimary,
               fontFamily: "BebasNeue",
-              fontSize: 36,
-              letterSpacing: 0.7,
+              fontSize: 38,
+              letterSpacing: 0.75,
               textTransform: "uppercase",
             }}
           >
@@ -41,15 +37,13 @@ export function ScreenPlaceholder({
             style={{
               color: colors.textSecondary,
               fontFamily: "DMSans_400Regular",
-              fontSize: 15,
-              lineHeight: 22,
-              maxWidth: 560,
+              fontSize: 14,
             }}
           >
-            {description}
+            {subtitle}
           </Text>
+          {children}
         </View>
-        {children}
       </View>
     </SafeAreaView>
   );

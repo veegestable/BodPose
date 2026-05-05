@@ -2,7 +2,7 @@
 
 ## Theme
 
-Dark-only visual language with a competitive bodybuilding identity ("Power House"). No light mode. Prioritize high contrast, bold display headings, and minimal chrome so camera overlays, scores, and body guidance remain the visual focus.
+Iron Precision visual language with a competitive bodybuilding identity. Use clean light surfaces, high-contrast typography, and strict crimson accents for high-priority interactions only. Preserve the same structural hierarchy used in BodPose (cards, sectioned dashboard blocks, focused action CTAs), but render it with warm neutrals + obsidian text.
 
 ## Colors
 
@@ -10,15 +10,17 @@ All components must use semantic tokens. Do not hardcode ad hoc colors in screen
 
 | Role            | CSS Variable       | Value    |
 | --------------- | ------------------ | -------- |
-| Page background | `--color-bg` | `#000000` |
-| Surface | `--color-surface` | `#111111` |
-| Elevated surface | `--color-surface-2` | `#1A1A1A` |
-| Primary text | `--color-text-primary` | `#FFFFFF` |
-| Muted text | `--color-text-secondary` | `#B0BEC5` |
-| Primary accent | `--color-accent` | `#D32F2F` |
-| Detail / border | `--color-detail` | `#B0BEC5` |
-| Warning | `--color-warning` | `#FFC107` |
-| Success | `--color-success` | `#4CAF50` |
+| Page background | `--color-bg` | `#FFF8F7` |
+| Surface | `--color-surface` | `#FFFFFF` |
+| Elevated surface | `--color-surface-2` | `#F9DCD9` |
+| Primary text | `--color-text-primary` | `#1A1A1A` |
+| Muted text | `--color-text-secondary` | `#636262` |
+| Primary accent | `--color-accent` | `#AF101A` |
+| Accent strong | `--color-accent-strong` | `#D32F2F` |
+| Detail / border | `--color-detail` | `#8F6F6C` |
+| Outline variant | `--color-border` | `#E4BEBA` |
+| Warning | `--color-warning` | `#F57C00` |
+| Success | `--color-success` | `#2E7D32` |
 
 ## Typography
 
@@ -50,4 +52,4 @@ Use reusable components under `src/components/ui/` with domain composition in `s
 
 ## Icons
 
-Use Lucide React Native for functional UI icons and project assets for branded tabs/medals. Keep iconography stroke-clean, high contrast, and consistent with dark surfaces. Red is reserved for active/critical actions, amber only for warning/correction contexts.
+Use Lucide React Native for functional UI icons and project assets for branded tabs/medals. Keep iconography stroke-clean and high contrast against light surfaces. Crimson is reserved for active/critical actions; amber is warning/correction only.
