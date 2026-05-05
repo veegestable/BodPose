@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "BodPose",
+    "slug": "bodpose",
+    "scheme": "bodpose",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}
