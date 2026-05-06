@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { colors } from "@/constants/colors";
 import { AppTopBar } from "@/components/ui/AppTopBar";
@@ -15,7 +16,10 @@ export function ScreenPlaceholder({
   children,
 }: ScreenPlaceholderProps) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.bg }}>
+    <SafeAreaView
+      edges={["left", "right", "bottom"]}
+      style={{ flex: 1, backgroundColor: colors.bg }}
+    >
       <AppTopBar />
       <View
         style={{
