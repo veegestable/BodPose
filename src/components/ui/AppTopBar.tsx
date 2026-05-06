@@ -1,14 +1,15 @@
-import { Bell } from "lucide-react-native";
-import { Text, View } from "react-native";
+import { Menu, UserCircle2 } from "lucide-react-native";
+import { Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { colors } from "@/constants/colors";
 
 type AppTopBarProps = {
   title?: string;
+  showMenu?: boolean;
 };
 
-export function AppTopBar({ title = "BODPOSE" }: AppTopBarProps) {
+export function AppTopBar({ title = "BODPOSE", showMenu = true }: AppTopBarProps) {
   const insets = useSafeAreaInsets();
 
   return (
@@ -22,28 +23,46 @@ export function AppTopBar({ title = "BODPOSE" }: AppTopBarProps) {
     >
       <View
         style={{
-          height: 64,
+          height: 58,
           paddingHorizontal: 16,
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
         }}
       >
-        <Text
-          style={{
-            color: colors.accent,
-            fontFamily: "BebasNeue",
-            fontSize: 28,
-            letterSpacing: 1.2,
-          }}
-        >
-          {title}
-        </Text>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+          {showMenu ? (
+            <Pressable
+              style={{
+                width: 34,
+                height: 34,
+                borderRadius: 17,
+                borderWidth: 1,
+                borderColor: colors.border,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: colors.bg,
+              }}
+            >
+              <Menu size={18} color={colors.textSecondary} />
+            </Pressable>
+          ) : null}
+          <Text
+            style={{
+              color: colors.accent,
+              fontFamily: "BebasNeue",
+              fontSize: 30,
+              letterSpacing: 1.2,
+            }}
+          >
+            {title}
+          </Text>
+        </View>
         <View
           style={{
-            width: 32,
-            height: 32,
-            borderRadius: 16,
+            width: 38,
+            height: 38,
+            borderRadius: 19,
             borderWidth: 1,
             borderColor: colors.border,
             alignItems: "center",
@@ -51,7 +70,7 @@ export function AppTopBar({ title = "BODPOSE" }: AppTopBarProps) {
             backgroundColor: colors.bg,
           }}
         >
-          <Bell size={16} color={colors.textSecondary} />
+          <UserCircle2 size={20} color={colors.textSecondary} />
         </View>
       </View>
     </View>
