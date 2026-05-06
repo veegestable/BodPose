@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { ScrollView, Text, View } from "react-native";
 
+import { Flame } from "lucide-react-native";
 import { AppTopBar } from "@/components/ui/AppTopBar";
 import { colors } from "@/constants/colors";
 import { useMvpStore } from "@/stores/useMvpStore";
@@ -44,10 +45,9 @@ export default function ProgressScreen() {
               borderRadius: 35,
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: colors.surface2,
             }}
           >
-            <Text style={{ color: colors.accent, fontFamily: "BebasNeue", fontSize: 24 }}>🔥</Text>
+            <Flame size={28} color={colors.accent} />
           </View>
           <View style={{ flex: 1, paddingLeft: 12 }}>
             <Text style={{ color: colors.textPrimary, fontFamily: "BebasNeue", fontSize: 20, letterSpacing: 0.4 }}>
@@ -89,7 +89,7 @@ export default function ProgressScreen() {
           <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
             <Text style={{ color: colors.textPrimary, fontFamily: "BebasNeue", fontSize: 18 }}>TRAINING VOLUME</Text>
             <Text style={{ color: colors.textSecondary, fontFamily: "DMSans_700Bold", fontSize: 11, letterSpacing: 1.2 }}>
-              LAST 12 WEEKS
+              LAST 70 WEEKS
             </Text>
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
